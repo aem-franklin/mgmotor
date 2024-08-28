@@ -131,6 +131,14 @@
         left: -1px
     }
 
+    div.columns-wrapper > div > div > div > p:nth-child(2) {
+        background-color: #fff;
+        color: #000;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        position: relative;
+    }
+
     .columns-wrapper .columns picture {
         display: inline-block;
     }
