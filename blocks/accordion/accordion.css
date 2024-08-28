@@ -61,6 +61,11 @@
 }
 
 /* mycode */
+/* Main section title styling */
+.mg-motors-spec-accordion.section .columns.mg-motors-keytitle > div > div:nth-child(2) > p {
+    text-align: right;
+}
+
 /* Main section styling */
 .mg-motors-spec-accordion.section {
     max-width: 855pt;
