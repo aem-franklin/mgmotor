@@ -61,151 +61,139 @@
 }
 
 /* mycode */
-.section {
+/* Main section styling */
+.mg-motors-spec-accordion.section {
     max-width: 855pt;
     margin: 0 auto !important;
 }
-.columns-container {
+
+/* Columns container styling */
+.mg-motors-spec-accordion.columns-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+}
 
-    .columns-wrapper,
-    .accordion-wrapper {
-        width: 50%;
-        box-sizing: border-box;
-        padding: 0 8px;
-        margin-top: 0;
-    }
+/* Wrapper for columns and accordion */
+.mg-motors-spec-accordion .columns-wrapper,
+.mg-motors-spec-accordion .accordion-wrapper {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 0 8px;
+    margin-top: 0;
+}
 
-    .columns-wrapper .columns.block.columns-1-cols {
-        border-radius: 10px;
-        padding: 0;
-        background: rgb(185, 225, 112);
-        border: 1px solid rgb(185, 225, 112);
-        color: rgb(0, 0, 0);
-        z-index: 6;
-        position: relative;
-        min-height: 675px;
-        height: 100%;
-    }
+/* Columns block styling */
+.mg-motors-spec-accordion .columns-wrapper .columns.block.columns-1-cols {
+    border-radius: 10px;
+    padding: 0;
+    background: rgb(185, 225, 112);
+    border: 1px solid rgb(185, 225, 112);
+    color: rgb(0, 0, 0);
+    z-index: 6;
+    position: relative;
+    min-height: 675px;
+    height: 100%;
+}
 
-    details.accordion-item {
-        background-color: #f2f2f2 !important;
-        color: #000 !important;
-        border: 1px solid #e1e1e1;
-        border-radius: 10px;
-    }
+/* Accordion item styling */
+.mg-motors-spec-accordion details.accordion-item {
+    background-color: #f2f2f2 !important;
+    color: #000 !important;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+}
 
-    div.accordion-wrapper > div > details > summary > p {
-        line-height: 1.2;
-    }
+/* Accordion label and body styling */
+.mg-motors-spec-accordion details.accordion-item .accordion-item-label,
+.mg-motors-spec-accordion details.accordion-item .accordion-item-body {
+    background-color: transparent;
+    padding: 10px 15px 10px 20%;
+}
 
-    div.accordion-wrapper > div > details > summary > p:nth-child(2) {
-        color: #6e6e6e;
-        display: contents;
-    }
+/* Accordion summary styling */
+.mg-motors-spec-accordion .accordion-wrapper > .accordion > details > summary > p {
+    line-height: 1.2;
+}
 
-    details.accordion-item .accordion-item-label {
-        background-color: transparent;
-        padding: 10px 15px 10px 20%;
-    }
+.mg-motors-spec-accordion .accordion-wrapper > .accordion > details > summary > p:nth-child(2) {
+    color: #6e6e6e;
+    display: contents;
+}
 
-    details.accordion-item .accordion-item-body {
-        padding: 10px 15px 10px 20%;
-    }
+/* Accordion summary arrow styling */
+.mg-motors-spec-accordion .accordion details.accordion-item summary::after {
+    width: 8px;
+    height: 8px;
+    font-size: 30px;
+    line-height: 50%;
+    color: #cf2230;
+}
 
-    .accordion details.accordion-item summary::after {
-        width: 8px;
-        height: 8px;
-        font-size: 30px;
-        line-height: 50%;
-        color: #cf2230;
-    }
+/* Columns inner div styling */
+.mg-motors-spec-accordion .columns-wrapper > .columns > div:nth-child(2) > div,
+.mg-motors-spec-accordion .columns-wrapper > .columns > div:nth-child(3) > div,
+.mg-motors-spec-accordion .columns-wrapper > .columns > div:nth-child(4) > div {
+    text-align: center;
+    max-width: 64%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-height: 100%;
+    position: relative;
+    left: -1px;
+}
 
-    div.columns-wrapper > div > div:nth-child(2) > div {
-        text-align: center;
-        max-width: 64%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        min-height: 100%;
-        position: relative;
-        left: -1px
-    }
+/* Columns p:nth-child(2) styling */
+.mg-motors-spec-accordion .columns-wrapper > .columns > div > div > p:nth-child(2) {
+    background-color: #fff;
+    color: #000;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: relative;
+    font-size: 1.875vw;
+    font-weight: 700;
+}
 
-    div.columns-wrapper > div > div:nth-child(3) > div {
-        text-align: center;
-        max-width: 64%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        min-height: 100%;
-        position: relative;
-        left: -1px
-    }
+/* Styling for bullet point before p:nth-child(2) */
+.mg-motors-spec-accordion .columns-wrapper > .columns > div > div > p:nth-child(2)::before {
+    content: "\25CF";
+    font-size: 95%;
+    position: absolute;
+    right: -17%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    color: #fff;
+}
 
-    div.columns-wrapper > div > div:nth-child(4) > div {
-        text-align: center;
-        max-width: 64%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        min-height: 100%;
-        position: relative;
-        left: -1px
-    }
+/* Styling for after pseudo-element in p:nth-child(2) */
+.mg-motors-spec-accordion .columns-wrapper > .columns > div > div > p:nth-child(2)::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    height: 2px;
+    background: #fff;
+    width: 15%;
+    left: 100%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
 
-    div.columns-wrapper > div > div > div > p:nth-child(2) {
-        background-color: #fff;
-        color: #000;
-        border-top-right-radius: 10px;
-        border-bottom-right-radius: 10px;
-        position: relative;
-        font-size: 1.875vw;
-        font-weight: 700;
-    }
+/* Picture and image styling within columns */
+.mg-motors-spec-accordion .columns-wrapper .columns picture {
+    display: inline-block;
+}
 
-    div.columns-wrapper > div > div > div > p:nth-child(2):before {
-        content: "\25CF";
-        font-size: 95%;
-        position: absolute;
-        float: right;
-        color: #fff;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        right: -17%;
-    }
+.mg-motors-spec-accordion .columns-wrapper .columns .columns-img-col {
+    position: relative;
+}
 
-    div.columns-wrapper > div > div > div > p:nth-child(2):after {
-        content: " ";
-        display: block;
-        position: absolute;
-        height: 2px;
-        background: #fff;
-        width: 36%;
-        left: 100%;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        width: 15%;
-    }
-
-    .columns-wrapper .columns picture {
-        display: inline-block;
-    }
-
-    .columns-wrapper .columns .columns-img-col {
-        position: relative;
-    }
-
-    .columns-wrapper .columns .columns-img-col picture {
-        position: absolute;
-        top: 52%;
-        right: 0;
-        transform: translate(47%, 2%);
-        width: 56%;
-        z-index: 5;
-    }
+.mg-motors-spec-accordion .columns-wrapper .columns .columns-img-col picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
