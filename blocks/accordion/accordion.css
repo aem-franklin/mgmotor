@@ -75,4 +75,13 @@
     .columns-wrapper .columns picture {
         display: inline-block;
     }
+
+    .columns-wrapper .columns .columns-img-col picture {
+        position: absolute;
+        top: 122%;
+        right: 0;
+        transform: translate(-185%, -50%);
+        width: 25%;
+        z-index: 5;
+    }
 }
