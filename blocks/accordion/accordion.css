@@ -97,7 +97,11 @@
         border-radius: 10px;
     }
 
-    div.accordion-wrapper > div > details:nth-child(1) > summary > p:nth-child(2) {
+    div.accordion-wrapper > div > details > summary > p {
+        line-height: 1.2;
+    }
+
+    div.accordion-wrapper > div > details > summary > p:nth-child(2) {
         color: #6e6e6e;
         display: contents;
     }
