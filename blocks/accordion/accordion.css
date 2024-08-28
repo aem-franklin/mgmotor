@@ -74,6 +74,8 @@
     .accordion-wrapper {
         width: 50%;
         box-sizing: border-box;
+        padding: 0 8px;
+        margin-top: 0;
     }
 
     .columns-wrapper .columns.block.columns-1-cols {
