@@ -115,6 +115,14 @@
         padding: 10px 15px 10px 20%;
     }
 
+    .accordion details.accordion-item summary::after {
+        width: 8px;
+        height: 8px;
+        font-size: 30px;
+        line-height: 50%;
+        color: #cf2230;
+    }
+
     div.columns-wrapper > div > div:nth-child(2) > div {
         text-align: center;
         max-width: 64%;
