@@ -153,6 +153,20 @@
         right: -17%;
     }
 
+    div.columns-wrapper > div > div > div > p:nth-child(2):after {
+        content: " ";
+        display: block;
+        position: absolute;
+        height: 2px;
+        background: #fff;
+        width: 36%;
+        left: 100%;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 21%;
+    }
+
     .columns-wrapper .columns picture {
         display: inline-block;
     }
