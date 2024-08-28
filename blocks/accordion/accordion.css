@@ -141,6 +141,17 @@
         font-weight: 700;
     }
 
+    div.columns-wrapper > div > div > div > p:nth-child(2):before {
+        content: "\25CF";
+        font-size: 95%;
+        position: absolute;
+        float: right;
+        color: #fff;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+
     .columns-wrapper .columns picture {
         display: inline-block;
     }
