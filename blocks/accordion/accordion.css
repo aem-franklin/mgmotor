@@ -63,7 +63,7 @@
 /* mycode */
 .section {
     max-width: 855pt;
-    margin: 0 auto;
+    margin: 0 auto !important;
 }
 .columns-container {
     display: flex;
