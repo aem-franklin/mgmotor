@@ -98,6 +98,17 @@
         border-radius: 10px;
     }
 
+    div.columns-wrapper > div > div:nth-child(2) > div {
+        text-align: center;
+        max-width: 64%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        min-height: 100%;
+        position: relative;
+        left: -1px
+    }
+
     .columns-wrapper .columns picture {
         display: inline-block;
     }
