@@ -93,13 +93,17 @@
     details.accordion-item {
         background-color: #f2f2f2 !important;
         color: #000 !important;
-        padding: 10px 15px 10px 20%;
         border: 1px solid #e1e1e1;
         border-radius: 10px;
     }
 
     details.accordion-item .accordion-item-label {
-        background-color: none;
+        background-color: transparent;
+        padding: 10px 15px 10px 20%;
+    }
+
+    details.accordion-item .accordion-item-body {
+        padding: 10px 15px 10px 20%;
     }
 
     div.columns-wrapper > div > div:nth-child(2) > div {
