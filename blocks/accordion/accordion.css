@@ -76,12 +76,16 @@
         display: inline-block;
     }
 
+    .columns-wrapper .columns .columns-img-col {
+        position: relative;
+    }
+
     .columns-wrapper .columns .columns-img-col picture {
         position: absolute;
-        top: 122%;
+        top: 52%;
         right: 0;
-        transform: translate(-185%, -50%);
-        width: 25%;
+        transform: translate(33%, 2%);
+        width: 56%;
         z-index: 5;
     }
 }
