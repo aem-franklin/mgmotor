@@ -78,7 +78,7 @@
         margin-top: 0;
     }
 
-    .columns-wrapper {
+    .columns-wrapper .columns.block.columns-1-cols {
         border-radius: 10px;
         padding: 0;
         background: rgb(185, 225, 112);
