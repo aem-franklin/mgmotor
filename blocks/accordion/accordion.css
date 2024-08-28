@@ -192,8 +192,9 @@
 
 .mg-motors-spec-accordion .columns-wrapper .columns .columns-img-col picture {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 52%;
     right: 0;
-    bottom: 0;
+    transform: translate(47%, 2%);
+    width: 56%;
+    z-index: 5;
 }
