@@ -67,7 +67,7 @@
 }
 
 /* Main section styling */
-.mg-motors-spec-accordion.section {
+.mg-motors-spec-accordion.section, .mg-motors-spec-accordiontitle.section {
     max-width: 855pt;
     margin: 0 auto !important;
 }
