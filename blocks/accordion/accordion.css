@@ -150,6 +150,7 @@
         top: 0;
         bottom: 0;
         margin: auto;
+        right: -17%;
     }
 
     .columns-wrapper .columns picture {
