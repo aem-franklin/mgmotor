@@ -27,7 +27,7 @@ export default function decorate(block) {
   // Clear existing content
   block.innerHTML = '';
 
-  const wheel = document.createElement('div');
+  const pointer = document.createElement('div');
   wheel.className = 'pointer';
  
   // Create UI inside wrapper
