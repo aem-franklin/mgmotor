@@ -1,11 +1,16 @@
 export default function decorate(block) {
-  // Read config from table
-  const rows = [...block.children];
+  // block = .wheel-spin
+ 
+  const container = block.closest('.wheel-spin-container');
+ 
+  // Read config from table (AEM converts doc → HTML table)
+  const rows = [...block.querySelectorAll(':scope > div')];
   const config = {};
  
   rows.forEach((row) => {
-    const key = row.children[0]?.textContent.trim();
-    const value = row.children[1]?.textContent.trim();
+    const cols = row.querySelectorAll('div');
+    const key = cols[0]?.textContent.trim();
+    const value = cols[1]?.textContent.trim();
     if (key) config[key] = value;
   });
  
@@ -19,29 +24,33 @@ export default function decorate(block) {
   const storageType = config['storage-type'] || 'localStorage';
   const disableDuringSpin = config['disable-during-spin'] === 'true';
  
-  // Clear block
+  // Clear existing content
   block.innerHTML = '';
  
-  // Create UI
+  // Create UI inside wrapper
   const wheel = document.createElement('div');
   wheel.className = 'wheel';
  
   const button = document.createElement('button');
-  button.textContent = buttonText;
   button.className = 'spin-btn';
+  button.textContent = buttonText;
  
   const result = document.createElement('div');
   result.className = 'result';
  
-  // Create segments visually
+  // Create slices
   segments.forEach((seg, i) => {
     const slice = document.createElement('div');
     slice.className = 'slice';
     slice.textContent = seg;
-    slice.style.transform = `rotate(${(360 / segments.length) * i}deg)`;
+ 
+    const angle = (360 / segments.length) * i;
+    slice.style.transform = `rotate(${angle}deg) skewY(${90 - (360 / segments.length)}deg)`;
+ 
     wheel.appendChild(slice);
   });
  
+  // Append inside wrapper
   block.append(wheel, button, result);
  
   let spinning = false;
@@ -57,9 +66,10 @@ export default function decorate(block) {
  
     const randomIndex = Math.floor(Math.random() * segments.length);
  
-    const rotationPerSegment = 360 / segments.length;
+    const segmentAngle = 360 / segments.length;
+ 
     const finalRotation =
-      360 * 5 + (360 - randomIndex * rotationPerSegment); // 5 spins + stop
+      360 * 5 + (360 - randomIndex * segmentAngle - segmentAngle / 2);
  
     wheel.style.transition = 'transform 3s ease-out';
     wheel.style.transform = `rotate(${finalRotation}deg)`;
