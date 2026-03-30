@@ -26,6 +26,9 @@ export default function decorate(block) {
  
   // Clear existing content
   block.innerHTML = '';
+
+  const wheel = document.createElement('div');
+  wheel.className = 'pointer';
  
   // Create UI inside wrapper
   const wheel = document.createElement('div');
@@ -51,7 +54,7 @@ export default function decorate(block) {
   });
  
   // Append inside wrapper
-  block.append(wheel, button, result);
+  block.append(pointer, wheel, button, result);
  
   let spinning = false;
  
