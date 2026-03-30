@@ -1,6 +1,6 @@
 export default function decorate(block) {
   // block = .wheel-spin
- 
+
   const container = block.closest('.wheel-spin-container');
  
   // Read config from table (AEM converts doc → HTML table)
