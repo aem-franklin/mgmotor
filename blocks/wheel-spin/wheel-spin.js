@@ -26,13 +26,13 @@ export default function decorate(block) {
  
   // Clear existing content
   block.innerHTML = '';
-
-  const pointer = document.createElement('div');
-  pointer.className = 'pointer';
  
   // Create UI inside wrapper
   const wheel = document.createElement('div');
   wheel.className = 'wheel';
+
+  const pointer = document.createElement('div');
+  pointer.className = 'pointer';
  
   const button = document.createElement('button');
   button.className = 'spin-btn';
