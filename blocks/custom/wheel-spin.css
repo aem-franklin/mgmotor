@@ -1,59 +1,61 @@
-.wheel {
+.wheel-spin-container {
+  text-align: center;
+}
+ 
+.wheel-spin-container .wheel {
   position: relative;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  border: 5px solid #333;
+  width: 320px;
+  height: 320px;
   margin: 20px auto;
+  border-radius: 50%;
+  border: 6px solid #333;
   overflow: hidden;
 }
  
-.slice {
+.wheel-spin-container .slice {
   position: absolute;
   width: 50%;
   height: 50%;
   top: 50%;
   left: 50%;
   transform-origin: 0% 0%;
-  background: #f2a;
+  background: #ff9800;
   border: 1px solid #fff;
-  text-align: center;
+  text-align: right;
+  padding: 5px;
   font-size: 12px;
 }
  
-.slice:nth-child(even) {
+.wheel-spin-container .slice:nth-child(even) {
   background: #4caf50;
 }
  
-.spin-btn {
-  display: block;
-  margin: 20px auto;
-  padding: 10px 20px;
+.wheel-spin-container .spin-btn {
+  margin-top: 20px;
+  padding: 10px 25px;
   font-size: 16px;
   cursor: pointer;
 }
  
-.spin-btn:disabled {
+.wheel-spin-container .spin-btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
  
-.result {
-  text-align: center;
-  font-size: 18px;
+.wheel-spin-container .result {
   margin-top: 15px;
+  font-size: 18px;
   font-weight: bold;
 }
  
 /* Pointer */
-.wheel::after {
+.wheel-spin-container .wheel::after {
   content: '';
   position: absolute;
-  top: -10px;
+  top: -12px;
   left: 50%;
   transform: translateX(-50%);
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
   border-bottom: 20px solid red;
 }
- 
