@@ -1,0 +1,59 @@
+.wheel {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 5px solid #333;
+  margin: 20px auto;
+  overflow: hidden;
+}
+ 
+.slice {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0% 0%;
+  background: #f2a;
+  border: 1px solid #fff;
+  text-align: center;
+  font-size: 12px;
+}
+ 
+.slice:nth-child(even) {
+  background: #4caf50;
+}
+ 
+.spin-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+ 
+.spin-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+ 
+.result {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 15px;
+  font-weight: bold;
+}
+ 
+/* Pointer */
+.wheel::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid red;
+}
+ 
