@@ -55,37 +55,52 @@ export default function decorate(block) {
  
   let spinning = false;
  
+  let currentRotation = 0;
+   
   button.addEventListener('click', () => {
     if (spinning) return;
- 
+   
     spinning = true;
- 
+   
     if (disableDuringSpin) {
       button.disabled = true;
     }
- 
+   
     const randomIndex = Math.floor(Math.random() * segments.length);
- 
     const segmentAngle = 360 / segments.length;
- 
-    const finalRotation =
-      360 * 5 + (360 - randomIndex * segmentAngle - segmentAngle / 2);
- 
+   
+    // Reset rotation to normalized value
+    currentRotation = currentRotation % 360;
+   
+    // Force instant reset (no animation)
+    wheel.style.transition = 'none';
+    wheel.style.transform = `rotate(${currentRotation}deg)`;
+   
+    // Force reflow (important trick)
+    wheel.offsetHeight;
+   
+    // Now apply new spin
+    const extraSpins = 5 * 360;
+    const targetRotation =
+      extraSpins + (360 - randomIndex * segmentAngle - segmentAngle / 2);
+   
+    currentRotation += targetRotation;
+   
     wheel.style.transition = 'transform 3s ease-out';
-    wheel.style.transform = `rotate(${finalRotation}deg)`;
- 
+    wheel.style.transform = `rotate(${currentRotation}deg)`;
+   
     setTimeout(() => {
       const selected = segments[randomIndex];
- 
+   
       result.textContent = `${resultPrefix}: ${selected}`;
- 
+   
       // Store result
       if (storageType === 'localStorage') {
         localStorage.setItem('wheel-result', selected);
       } else {
         sessionStorage.setItem('wheel-result', selected);
       }
- 
+   
       spinning = false;
       button.disabled = false;
     }, 3000);
