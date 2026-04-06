@@ -85,8 +85,7 @@ export default function decorate(block) {
    
     // Now apply new spin
     const extraSpins = 5 * 360;
-    const targetRotation =
-      extraSpins + (360 - randomIndex * segmentAngle - segmentAngle / 2);
+    const targetRotation = extraSpins + (360 - (randomIndex * segmentAngle + segmentAngle / 2)) - (currentRotation % 360);
    
     currentRotation += targetRotation;
    
