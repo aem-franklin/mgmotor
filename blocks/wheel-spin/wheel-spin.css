@@ -7,7 +7,7 @@
   position: relative;
   width: 320px;
   height: 320px;
-  margin-top: 40px;
+  margin: 40px auto 0;
   border-radius: 50%;
   border: 6px solid #333;
   overflow: hidden;
@@ -52,7 +52,7 @@
 /* Pointer */
 .wheel-spin-container .pointer {
   position: absolute;
-  top: -20px;
+  top: calc(40px - 20px);
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
