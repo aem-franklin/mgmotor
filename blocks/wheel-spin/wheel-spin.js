@@ -84,7 +84,8 @@ export default function decorate(block) {
    
     // Now apply new spin
     const extraSpins = 5 * 360;
-    const targetRotation = extraSpins + (360 - (randomIndex * segmentAngle + segmentAngle / 2)) - (currentRotation % 360);
+    const pointerOffset = 90; // because pointer is at top
+    const targetRotation = extraSpins + (360 - (randomIndex * segmentAngle + segmentAngle / 2) - pointerOffset) - (currentRotation % 360);
    
     currentRotation += targetRotation;
    
