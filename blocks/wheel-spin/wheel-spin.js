@@ -54,8 +54,7 @@ export default function decorate(block) {
   });
  
   // Append inside wrapper
-  wheel.appendChild(pointer);
-  block.append(wheel, button, result);
+  block.append(pointer, wheel, button, result);
  
   let spinning = false;
  
