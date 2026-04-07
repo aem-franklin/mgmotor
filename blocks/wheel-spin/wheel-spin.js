@@ -1,9 +1,6 @@
-export default function decorate(block) {
-  // block = .wheel-spin
- 
+export default function decorate(block) { 
   const container = block.closest('.wheel-spin-container');
  
-  // Read config from table (AEM converts doc → HTML table)
   const rows = [...block.querySelectorAll(':scope > div')];
   const config = {};
  
@@ -14,7 +11,6 @@ export default function decorate(block) {
     if (key) config[key] = value;
   });
  
-  // Extract segments
   const segments = Object.keys(config)
     .filter((k) => k.startsWith('segment-'))
     .map((k) => config[k]);
@@ -24,10 +20,8 @@ export default function decorate(block) {
   const storageType = config['storage-type'] || 'localStorage';
   const disableDuringSpin = config['disable-during-spin'] === 'true';
  
-  // Clear existing content
   block.innerHTML = '';
  
-  // Create UI inside wrapper
   const wheel = document.createElement('div');
   wheel.className = 'wheel';
 
@@ -41,7 +35,6 @@ export default function decorate(block) {
   const result = document.createElement('div');
   result.className = 'result';
  
-  // Create slices
   segments.forEach((seg, i) => {
     const slice = document.createElement('div');
     slice.className = 'slice';
@@ -53,7 +46,6 @@ export default function decorate(block) {
     wheel.appendChild(slice);
   });
  
-  // Append inside wrapper
   block.append(pointer, wheel, button, result);
  
   let spinning = false;
@@ -72,17 +64,13 @@ export default function decorate(block) {
     const randomIndex = Math.floor(Math.random() * segments.length);
     const segmentAngle = 360 / segments.length;
    
-    // Reset rotation to normalized value
     currentRotation = currentRotation % 360;
    
-    // Force instant reset (no animation)
     wheel.style.transition = 'none';
     wheel.style.transform = `rotate(${currentRotation}deg)`;
    
-    // Force reflow (important trick)
     wheel.offsetHeight;
    
-    // Now apply new spin
     const extraSpins = 5 * 360;
     const pointerOffset = 90; // because pointer is at top
     const targetRotation = extraSpins + (360 - (randomIndex * segmentAngle + segmentAngle / 2) - pointerOffset) - (currentRotation % 360);
@@ -97,7 +85,6 @@ export default function decorate(block) {
    
       result.textContent = `${resultPrefix}: ${selected}`;
    
-      // Store result
       if (storageType === 'localStorage') {
         localStorage.setItem('wheel-result', selected);
       } else {
